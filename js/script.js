@@ -2,6 +2,7 @@ const mySlides = new Vue({
     el : '#app',
     data : {
         activeSlide : 0,
+        interval : 0,
         slides : [
             {
                 image: 'img/01.jpg',
@@ -32,6 +33,7 @@ const mySlides = new Vue({
     },
     created: function () {
         window.addEventListener('keyup', this.keyControl);
+        this.automaticNext();
     },
     methods : {
         nextSlide(){
@@ -61,6 +63,13 @@ const mySlides = new Vue({
                 default:
                     break;
             }
+        },
+        automaticNext(){
+            this.interval = setInterval(this.nextSlide, 500);
+        },
+        mouseOver(){
+            console.log(this.interval);
+            clearInterval(this.interval);
         }
     }
 });
