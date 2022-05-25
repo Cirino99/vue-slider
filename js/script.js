@@ -30,8 +30,25 @@ const mySlides = new Vue({
             }
         ]
     },
+    created: function () {
+        window.addEventListener('keyup', function(e){
+            console.log(e.keyCode);
+            switch (e.keyCode) {
+                case 40:
+                    console.log(this);
+                    this.nextSlide;
+                    break;
+                case 38:
+                    this.prevSlide;
+                    break;
+                default:
+                    break;
+            }
+        });
+},
     methods : {
         nextSlide(){
+            console.log(this);
             if(this.activeSlide<(this.slides.length - 1))
                 this.activeSlide++;
             else
