@@ -31,7 +31,7 @@ const mySlides = new Vue({
         ]
     },
     created: function () {
-        window.addEventListener('keyup', this.asd);
+        window.addEventListener('keyup', this.keyControl);
     },
     methods : {
         nextSlide(){
@@ -49,7 +49,7 @@ const mySlides = new Vue({
         goSlide(id){
             this.activeSlide = id;
         },
-        asd(e){
+        keyControl(e){
             console.log(e);
             switch (e.keyCode) {
                 case 40:
