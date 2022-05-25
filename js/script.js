@@ -65,7 +65,7 @@ const mySlides = new Vue({
             }
         },
         automaticNext(){
-            this.interval = setInterval(this.nextSlide, 500);
+            this.interval = setInterval(this.nextSlide, 3000);
         },
         mouseOver(){
             console.log(this.interval);
