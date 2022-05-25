@@ -31,6 +31,20 @@ const mySlides = new Vue({
         ]
     },
     methods : {
-
+        nextSlide(){
+            if(this.activeSlide<(this.slides.length - 1))
+                this.activeSlide++;
+            else
+                this.activeSlide = 0;
+        },
+        prevSlide(){
+            if(this.activeSlide>0)
+                this.activeSlide--;
+            else
+                this.activeSlide = this.slides.length - 1;
+        },
+        goSlide(id){
+            this.activeSlide = id;
+        }
     }
 });
