@@ -31,24 +31,10 @@ const mySlides = new Vue({
         ]
     },
     created: function () {
-        window.addEventListener('keyup', function(e){
-            console.log(e.keyCode);
-            switch (e.keyCode) {
-                case 40:
-                    console.log(this);
-                    this.nextSlide;
-                    break;
-                case 38:
-                    this.prevSlide;
-                    break;
-                default:
-                    break;
-            }
-        });
-},
+        window.addEventListener('keyup', this.asd);
+    },
     methods : {
         nextSlide(){
-            console.log(this);
             if(this.activeSlide<(this.slides.length - 1))
                 this.activeSlide++;
             else
@@ -62,6 +48,19 @@ const mySlides = new Vue({
         },
         goSlide(id){
             this.activeSlide = id;
+        },
+        asd(e){
+            console.log(e);
+            switch (e.keyCode) {
+                case 40:
+                    this.nextSlide();
+                    break;
+                case 38:
+                    this.prevSlide();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 });
